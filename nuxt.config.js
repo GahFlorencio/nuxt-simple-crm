@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  mode:'spa',
   server: {
     host: "0"
   },
@@ -15,7 +16,7 @@ export default {
     redirect: {
       login: '/login',
       logout: '/login',
-      callback: '/',
+      callback: '/login',
       home: '/'
     },
     strategies: {
@@ -33,7 +34,7 @@ export default {
         },
         endpoints: {
           login: {url: '/auth/login', method: 'post'},
-          user: {url: '/auth/user', method: 'get'},
+          user: {url: '/auth/user', method: 'get', propertyName: false},
         }
       }
     }
