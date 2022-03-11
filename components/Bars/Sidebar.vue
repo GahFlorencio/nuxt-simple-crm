@@ -33,12 +33,12 @@ name: "Sidebar",
         {
           icon: 'mdi-map-marker',
           title: 'Estados',
-          to: '/locations/states'
+          to: '/location/state'
         },
         {
           icon: 'mdi-map-marker-outline',
           title: 'Cidades',
-          to: '/locations/cities'
+          to: '/location/city'
         },
       ],
     }
