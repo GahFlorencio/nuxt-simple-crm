@@ -20,11 +20,14 @@ const mixin = {
         Object.keys(row).map((column) => {
 
           newRow[column] = row[column]
-
           const settings = form.find( field =>field.column === column)
 
           if(settings.type === Date){
             newRow[column] = new Date(row[column]).toLocaleString()
+          }
+
+          if(settings.type === 'relation' && settings.relationType === 'belongs-to'){
+            newRow[column] = row[column][settings.display]
           }
 
         })

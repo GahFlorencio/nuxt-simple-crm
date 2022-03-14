@@ -41,8 +41,8 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-simple-crm',
-    title: 'nuxt-simple-crm',
+    titleTemplate: '%s - Sistem de Vendas',
+    title: 'Sistema de Vendas',
     htmlAttrs: {
       lang: 'pt-br'
     },

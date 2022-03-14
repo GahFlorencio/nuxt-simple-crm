@@ -21,24 +21,26 @@
       :headers="headers"
       :rows="rows"
       :pagination="pagination"
-      title="Estados"
+      title="Cidades"
       :loading="loading"
       :model="model"
       :fetch-function="fetchData"
+      :delete-function="deleteData"
     />
   </v-container>
 </template>
 <script>
 import TableComponent from "@/components/Tables/TableComponent";
-import CityModel from "@/Models/CityModel";
+import cityModel from "@/Models/CityModel";
+
 export default {
-  name: 'CitiesPage',
+  name: 'StatesPage',
   components: {TableComponent},
-  data () {
+  data() {
     return {
       search: '',
       loading: false,
-      model: CityModel,
+      model: cityModel,
       headers: [],
       rows: [],
       pagination: {
@@ -47,10 +49,9 @@ export default {
       }
     }
   },
-  methods:{
-    async keyUpSearch(event){
-      if(event.key === "Enter")
-      {
+  methods: {
+    async keyUpSearch(event) {
+      if (event.key === "Enter") {
         await this.fetchData()
       }
     },
@@ -65,12 +66,21 @@ export default {
           this.loading = false
         })
         .catch((err)=>{
+          this.loading = false
           console.log(err)
         })
 
     },
+    async deleteData(id) {
+      return await this.$axios.delete(`${this.model.route}/${id}`)
+        .then((response) => (response.status))
+        .catch((err) => {
+          console.log(err)
+          return 400
+        })
+    },
   },
-  async mounted () {
+  async mounted() {
     await this.fetchData()
   }
 }

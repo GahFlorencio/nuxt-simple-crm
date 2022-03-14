@@ -1,5 +1,6 @@
 export default {
   route: "/location/state",
+  index:"/location/states",
   form: [
     {
       type: String,

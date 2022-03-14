@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card-text>
-      <h1>Estado</h1>
+      <h1>Cidade</h1>
       </v-card-text>
     <StandardForm
       :model="model"
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import stateModel from "@/Models/StateModel";
+import cityModel from "@/Models/CityModel";
 import StandardForm from "@/components/Forms/StandardForm";
 export default {
-  name: "StatePage",
+  name: "CityPage",
   components: {StandardForm},
   data: () => ({
-    model: stateModel,
+    model: cityModel,
   })
 }
 </script>

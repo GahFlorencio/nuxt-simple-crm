@@ -43,8 +43,13 @@
                     <v-col
                       cols="12"
                     >
+                      <v-text-field v-if="columns.type === String && columns.list"
+                        v-model="editedItem[columns.column]"
+                        :label="columns.text"
+                        readonly
+                      ></v-text-field>
                       <v-text-field
-                        v-if="columns.edit"
+                        v-if="columns.type === 'relation' && columns.list && columns.relationType === 'belongs-to'"
                         v-model="editedItem[columns.column]"
                         :label="columns.text"
                         readonly
@@ -150,7 +155,7 @@ export default {
     translate: {},
     dialog: false,
     dialogDelete: false,
-    editedIndex: -1,
+    editedIndex: 0,
     hidden: [],
     editedItem: {}
   }),
@@ -181,7 +186,7 @@ export default {
 
     editItem(item = null) {
       if (item === null) {
-        this.$router.push(`${this.model.route}/-1`)
+        this.$router.push(`${this.model.route}/0`)
       }
 
       this.$router.push(`${this.model.route}/${item.id}`)
@@ -208,7 +213,7 @@ export default {
       this.dialogDelete = false
       this.$nextTick(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
-        this.editedIndex = -1
+        this.editedIndex = 0
       })
     }
   },
