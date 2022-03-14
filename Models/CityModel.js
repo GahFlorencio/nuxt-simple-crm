@@ -60,9 +60,7 @@ export default {
     edit: true,
     create: false,
     list: true
-  },], relations: [{
-    column: 'state', foreng: 'state_code', display: 'abbr', id: 'code'
-  }], defaultItem: {
+  },], defaultItem: {
     name: '', city_number: '', code: '', state: '',
   }, editedItem: {
     name: '', city_number: '', code: '', state: '',

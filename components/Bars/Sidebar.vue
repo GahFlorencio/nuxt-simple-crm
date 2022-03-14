@@ -41,9 +41,14 @@ name: "Sidebar",
           to: '/location/city'
         },
         {
-          icon: 'mdi-map-marker-outline',
+          icon: 'mdi-car-estate',
           title: 'Tipo de Veiculo',
           to: '/vehicle/type'
+        },
+        {
+          icon: 'mdi-rv-truck',
+          title: 'Marca de Veiculo',
+          to: '/vehicle/brand'
         },
       ],
     }
