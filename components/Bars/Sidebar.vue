@@ -40,6 +40,11 @@ name: "Sidebar",
           title: 'Cidades',
           to: '/location/city'
         },
+        {
+          icon: 'mdi-map-marker-outline',
+          title: 'Tipo de Veiculo',
+          to: '/vehicle/type'
+        },
       ],
     }
   },

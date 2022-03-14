@@ -21,7 +21,8 @@ const mixin = {
 
           newRow[column] = row[column]
           const settings = form.find( field =>field.column === column)
-
+          console.log(column)
+          console.log(settings)
           if(settings.type === Date){
             newRow[column] = new Date(row[column]).toLocaleString()
           }
