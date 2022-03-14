@@ -1,22 +1,13 @@
-import VehicleTypeModel from "@/Models/VehicleTypeModel";
+import vehicleBrandModel from "@/Models/VehicleBrandModel";
+import VehicleBrandModel from "@/Models/VehicleBrandModel";
 
 export default {
-  route: "/vehicle/brand",
-  index: "/vehicle/brands",
+  route: "/vehicle/model",
+  index: "/vehicle/models",
   form: [
     {
       type: String, column: 'id', text: '#', required: false, relation: false, edit: false, create: false, list: true
-    }, {
-      type: String,
-      column: 'code',
-      text: 'Código',
-      required: true,
-      relation: false,
-      edit: true,
-      create: true,
-      list: true
     },
-
     {
       type: String,
       column: 'description',
@@ -29,11 +20,11 @@ export default {
     },
     {
       type: 'relation',
-      column: 'type',
-      text: 'Tipo',
-      resource: `${VehicleTypeModel.index}`,
+      column: 'brand',
+      text: 'Marca',
+      resource: `${VehicleBrandModel.index}`,
       relationType: 'belongs-to',
-      reference: 'type_code',
+      reference: 'brand_code',
       display: 'description',
       value: 'code',
       required: false,
@@ -44,7 +35,7 @@ export default {
     },
     {
       type: String,
-      column: 'type_code',
+      column: 'brand_code',
       text: 'Código da Marca',
       required: false,
       relation: false,
@@ -70,8 +61,8 @@ export default {
       create: false,
       list: true
     },], defaultItem: {
-    code: '', description: '', type: '',
+    description: '', brand: '',
   }, editedItem: {
-    code: '', description: '', type: '',
+     description: '', brand: '',
   }
 }

@@ -64,6 +64,7 @@ export default {
     },
     async querySelections(value) {
       this.loading = true
+
       await this.$axios.get(`${this.resource}?no-limit=true&search=${value}`)
         .then((response) => {
           this.items = response.data.paginate.data
@@ -73,6 +74,17 @@ export default {
           this.items = []
           this.loading = false
         })
+
+      if(this.model !== null){
+        await this.$axios.get(`${this.resource}?no-limit=true&search=${this.model}`)
+          .then((response) => {
+            this.items = [...this.items, ...response.data.paginate.data]
+            this.loading = false
+          })
+          .catch((err) => {
+            this.loading = false
+          })
+      }
     },
   },
 }

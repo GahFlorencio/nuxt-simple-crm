@@ -42,13 +42,18 @@ name: "Sidebar",
         },
         {
           icon: 'mdi-car-estate',
-          title: 'Tipo de Veiculo',
+          title: 'Tipo Veículo',
           to: '/vehicle/type'
         },
         {
-          icon: 'mdi-rv-truck',
-          title: 'Marca de Veiculo',
+          icon: 'mdi-car-side',
+          title: 'Marca Veículo',
           to: '/vehicle/brand'
+        },
+        {
+          icon: 'mdi-truck-outline',
+          title: 'Modelo Veículo',
+          to: '/vehicle/model'
         },
       ],
     }
