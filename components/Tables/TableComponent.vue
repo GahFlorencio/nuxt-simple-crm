@@ -87,12 +87,7 @@
       </template>
 
       <template v-slot:no-data>
-        <v-btn
-          color="primary"
-          @click="initialize"
-        >
-          Reset
-        </v-btn>
+      Nenhum registro encontrado
       </template>
     </v-data-table>
     <v-pagination
@@ -215,7 +210,7 @@ export default {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = 0
       })
-    }
+    },
   },
 }
 </script>
