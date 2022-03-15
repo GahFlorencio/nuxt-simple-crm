@@ -19,6 +19,16 @@ export default {
     list: true
   },
     {
+      type: String,
+      column: 'city_display',
+      text: 'Cidade',
+      required: false,
+      relation: false,
+      edit: false,
+      create: false,
+      list: false
+    },
+    {
       type: 'relation',
       column: 'state',
       text: 'Estado',

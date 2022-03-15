@@ -36,7 +36,7 @@ name: "Sidebar",
           to: '/location/state'
         },
         {
-          icon: 'mdi-map-marker-outline',
+          icon: 'mdi-city',
           title: 'Cidades',
           to: '/location/city'
         },
@@ -54,6 +54,11 @@ name: "Sidebar",
           icon: 'mdi-truck-outline',
           title: 'Modelo Veículo',
           to: '/vehicle/model'
+        },
+        {
+          icon: 'mdi-account-supervisor-circle',
+          title: 'Clientes',
+          to: '/customer/customer'
         },
       ],
     }

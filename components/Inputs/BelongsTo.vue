@@ -8,10 +8,10 @@
     :items="items"
     :search-input.sync="search"
     cache-items
-    flat
+    filled
     hide-no-data
     hide-details
-    solo-inverted
+
     @change=" (value) =>changeModel(value)"
   ></v-autocomplete>
 </template>

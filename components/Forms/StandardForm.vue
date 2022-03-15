@@ -6,15 +6,24 @@
         v-if="(isEditing && column.edit) || (isEditing  === false &&  column.create === true)"
       >
         <v-text-field
-          v-if="column.type === String"
+          v-if="column.type === String && column.hasOwnProperty('mask')"
+          v-mask="`${column.mask}`"
+          :maxlength="`${column.max}`"
           v-model="editedItem[column.column]"
           :label="column.text"
           required
         ></v-text-field>
         <v-text-field
-          v-if="column.type === Date"
+          v-if="column.type === String && !column.hasOwnProperty('mask')"
+          v-model="editedItem[column.column]"
+          :label="column.text"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-if="column.type === Date && editedItem[column.column] !== null"
           v-model="new Date(editedItem[column.column]).toLocaleString()"
           :label="column.text"
+          disabled
           :readonly="blockedFields.includes(column.column)"
         ></v-text-field>
         <belongs-to
@@ -96,8 +105,11 @@
 
 <script>
 import BelongsTo from "@/components/Inputs/BelongsTo";
+import {mask} from 'vue-the-mask'
+
 export default {
   components: {BelongsTo},
+  directives: {mask},
   props: {
 
       model: {
