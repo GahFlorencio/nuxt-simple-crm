@@ -60,6 +60,11 @@ name: "Sidebar",
           title: 'Clientes',
           to: '/customer/customer'
         },
+        {
+          icon: 'mdi-account-supervisor-circle',
+          title: 'Veiculos 2',
+          to: '/customer/vehicle'
+        },
       ],
     }
   },

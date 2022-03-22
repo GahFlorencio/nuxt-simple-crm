@@ -7,7 +7,8 @@
       fixed
       app
     >
-     <Sidebar/>
+<!--     <Sidebar/>-->
+      <NavBar/>
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
@@ -33,9 +34,10 @@
 
 <script>
 import Sidebar from "~/components/Bars/Sidebar";
+import NavBar from "@/components/Bars/NavBar";
 export default {
   name: 'DefaultLayout',
-  components: {Sidebar},
+  components: {NavBar, Sidebar},
   data () {
     return {
       clipped: false,

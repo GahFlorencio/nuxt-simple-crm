@@ -38,6 +38,18 @@
         />
       </v-col>
     </v-row>
+    <v-row  v-if="$route.params.id !== 0 && this.model.hasOwnProperty('hasMany') && this.model.hasMany !== []">
+      <v-col
+      cols="12"
+      >
+        <HasManyComponent
+          v-for="relation in this.model.hasMany "
+          :relation="relation"
+          :owner_id="$route.params.id*1"
+        />
+      </v-col>
+
+    </v-row>
     <v-row class="">
       <v-btn
         color="primary darken-2"
@@ -97,7 +109,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-
   </v-container>
 
 
@@ -106,9 +117,10 @@
 <script>
 import BelongsTo from "@/components/Inputs/BelongsTo";
 import {mask} from 'vue-the-mask'
+import HasManyComponent from "@/components/Tables/HasManyComponent";
 
 export default {
-  components: {BelongsTo},
+  components: {HasManyComponent, BelongsTo},
   directives: {mask},
   props: {
 
@@ -266,8 +278,6 @@ export default {
   mounted() {
     this.initialize()
   }
-}
-</script>
 }
 </script>
 

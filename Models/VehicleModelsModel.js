@@ -19,13 +19,23 @@ export default {
       list: true
     },
     {
+      type: String,
+      column: 'display',
+      text: 'Modelo',
+      required: false,
+      relation: false,
+      edit: false,
+      create: false,
+      list: false
+    },
+    {
       type: 'relation',
       column: 'brand',
       text: 'Marca',
       resource: `${VehicleBrandModel.index}`,
       relationType: 'belongs-to',
       reference: 'brand_code',
-      display: 'description',
+      display: 'display',
       value: 'code',
       required: false,
       relation: false,

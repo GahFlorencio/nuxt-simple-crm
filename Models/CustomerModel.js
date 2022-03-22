@@ -1,4 +1,5 @@
 import CityModel from "@/Models/CityModel";
+import CustomerVehicleModel from "@/Models/CustomerVehicleModel";
 
 export default {
   route: "/customer/customer",
@@ -139,5 +140,13 @@ export default {
     address_complement: '',
     city_id: '',
     city: ''
-  }
+  },hasMany: [
+    {
+      display: 'Veiculos',
+      owner_key: 'id',
+      child_key: 'customer_id',
+      index:'/customer/vehicles/customer',
+      resource: CustomerVehicleModel
+    }
+  ]
 }

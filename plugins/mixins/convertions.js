@@ -13,6 +13,7 @@ const mixin = {
       return convertedHeaders
 
     }, formatRows(rows, form) {
+      console.log(form)
       let formatedRows = []
       rows.map((row) => {
         let newRow = {};
@@ -20,8 +21,9 @@ const mixin = {
         Object.keys(row).map((column) => {
 
           newRow[column] = row[column]
+          console.log(column)
           const settings = form.find( field =>field.column === column)
-
+          console.log(settings)
           if(settings.type === Date && row[column] !== null){
             newRow[column] = new Date(row[column]).toLocaleString()
           }

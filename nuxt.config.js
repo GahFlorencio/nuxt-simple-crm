@@ -10,7 +10,7 @@ export default {
   },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: "http://api.crm.local/api/",
+    baseURL: "http://crm.local/api/",
   },
   auth: {
     redirect: {
