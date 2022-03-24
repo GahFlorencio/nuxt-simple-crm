@@ -44,6 +44,16 @@ export default {
     },
     {
       type: String,
+      column: 'display',
+      text: 'Display',
+      required: false,
+      relation: false,
+      edit: false,
+      create: false,
+      list: false
+    },
+    {
+      type: String,
       column: 'type_code',
       text: 'Código da Marca',
       required: false,
