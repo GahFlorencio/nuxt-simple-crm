@@ -94,6 +94,16 @@ export default {
         ]
       },
       {
+        icon: 'mdi-package-variant',
+        title: 'Produtos',
+        items:[
+          {
+            title: 'Tipo',
+            to: '/product/type'
+          }
+        ]
+      },
+      {
         icon: 'mdi-account-supervisor-circle',
         title: 'Clientes',
         to: '/customer/customer'
